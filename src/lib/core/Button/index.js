@@ -32,7 +32,7 @@ const StyledButton = styled.button`
     props.options.textColor ? props.options.textColor : '#fff'};
   cursor: pointer;
   font-family: ${mainFont};
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 600;
   width: ${props =>
     props.options.icon && !props.options.label ? '0px' : '300px'};
