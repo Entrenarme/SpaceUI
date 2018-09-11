@@ -10,15 +10,15 @@ const actions = {
   onClick: action('onClick'),
 };
 
-storiesOf('Button', module).add('With text', () => (
+storiesOf('Button/Normal', module).add('With text', () => (
   <Button label="Test text" onClick={() => console.log('hola')} {...actions} />
 ));
 
-storiesOf('Button', module).add('With icon', () => (
+storiesOf('Button/Normal', module).add('With icon', () => (
   <Button icon={faPlus} onClick={() => console.log('hola')} {...actions} />
 ));
 
-storiesOf('Button', module).add('With icon and text', () => (
+storiesOf('Button/Normal', module).add('With icon and text', () => (
   <Button
     icon={faPlus}
     label="Test text"
@@ -27,9 +27,8 @@ storiesOf('Button', module).add('With icon and text', () => (
   />
 ));
 
-storiesOf('Button', module).add('With solid background color', () => (
+storiesOf('Button/Solid', module).add('With text', () => (
   <Button
-    icon={faWarehouse}
     label="Test text"
     bgColor="#4CAF50"
     onClick={() => console.log('hola')}
@@ -37,10 +36,49 @@ storiesOf('Button', module).add('With solid background color', () => (
   />
 ));
 
-storiesOf('Button', module).add('Outlined', () => (
+storiesOf('Button/Solid', module).add('With icon', () => (
+  <Button
+    icon={faPlus}
+    bgColor="#4CAF50"
+    onClick={() => console.log('hola')}
+    {...actions}
+  />
+));
+
+storiesOf('Button/Solid', module).add('With icon and text', () => (
+  <Button
+    icon={faPlus}
+    label="Test text"
+    bgColor="#4CAF50"
+    onClick={() => console.log('hola')}
+    {...actions}
+  />
+));
+
+storiesOf('Button/Outlined', module).add('With text', () => (
   <Button
     outLined
-    icon={faWarehouse}
+    label="Test text"
+    textColor="tomato"
+    onClick={() => console.log('hola')}
+    {...actions}
+  />
+));
+
+storiesOf('Button/Outlined', module).add('With icon', () => (
+  <Button
+    outLined
+    icon={faPlus}
+    textColor="tomato"
+    onClick={() => console.log('hola')}
+    {...actions}
+  />
+));
+
+storiesOf('Button/Outlined', module).add('With icon and text', () => (
+  <Button
+    outLined
+    icon={faPlus}
     label="Test text"
     textColor="tomato"
     onClick={() => console.log('hola')}
