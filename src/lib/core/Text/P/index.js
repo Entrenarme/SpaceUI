@@ -21,18 +21,26 @@ const ExtendedP = styled.p`
     props.options.size === 's' ? regularFont : mainFont};
   font-size: ${props => setFontSize(props.options.size)};
   color: ${props => props.options.color};
+  text-align: ${props =>
+    props.options.textAlign ? props.options.textAlign : 'left'};
 `;
 
 type Props = {
   children: React.Node,
   color?: string,
   size?: 'l' | 'm' | 's',
+  style?: Object,
+  textAlign?: string,
 };
 
 const P = (props: Props) => {
-  const { children, color, size } = props;
+  const { children, color, size, style, textAlign } = props;
 
-  return <ExtendedP options={{ color, size }}>{children}</ExtendedP>;
+  return (
+    <ExtendedP options={{ color, size, textAlign }} style={style}>
+      {children}
+    </ExtendedP>
+  );
 };
 
 export default P;
