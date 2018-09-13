@@ -30,7 +30,10 @@ storiesOf('Slider', module)
             Number: {element}
             <br />
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            fermentum magna eu velit semper hendrerit.
+            fermentum magna eu velit semper hendrerit. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Donec fermentum magna eu velit
+            semper hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Donec fermentum magna eu velit semper hendrerit.
           </MainCard>
         </div>
       ))}
@@ -47,7 +50,10 @@ storiesOf('Slider', module)
             Number: {element}
             <br />
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            fermentum magna eu velit semper hendrerit.
+            fermentum magna eu velit semper hendrerit. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Donec fermentum magna eu velit
+            semper hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Donec fermentum magna eu velit semper hendrerit.
           </MainCard>
         </div>
       ))}

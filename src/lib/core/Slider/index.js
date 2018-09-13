@@ -14,6 +14,7 @@ type Props = {
   disableDots?: boolean,
   invertedArrows?: boolean,
   disableArrows?: boolean,
+  maxHeightSlick?: string,
 };
 
 type ArrowProps = {
@@ -31,6 +32,11 @@ const StyledSlider = styled(ReactSlider)`
     display: ${props => (props.options.less ? null : 'flex !important')};
     justify-content: ${props =>
       props.options.less ? null : 'space-between !important'};
+  }
+
+  .slick-list {
+    max-height: ${props =>
+      props.options.maxHeightSlick ? props.options.maxHeightSlick : null};
   }
 `;
 
@@ -65,6 +71,7 @@ const Slider = ({
   disableDots,
   invertedArrows,
   disableArrows,
+  maxHeightSlick,
   ...rest
 }: Props) => {
   const settings = {
@@ -92,7 +99,10 @@ const Slider = ({
   return (
     <StyledSlider
       {...settings}
-      options={{ less: React.Children.count(children) >= itemsToShow }}
+      options={{
+        less: React.Children.count(children) >= itemsToShow,
+        maxHeightSlick,
+      }}
     >
       {children}
     </StyledSlider>
