@@ -54,7 +54,12 @@ const ExtendedH1 = styled.h1`
   font-size: ${props => setFontSize(props.options.size)};
   font-weight: 700;
   color: ${props => props.options.color};
+<<<<<<< HEAD
   ${props => getMargin(props)};
+=======
+  text-align: ${props =>
+    props.options.textAlign ? props.options.textAlign : 'left'};
+>>>>>>> origin/dev
 `;
 
 type Props = {

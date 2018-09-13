@@ -21,18 +21,26 @@ const ExtendedH3 = styled.h3`
   font-size: ${props => setFontSize(props.options.size)};
   font-weight: 600;
   color: ${props => props.options.color};
+  text-align: ${props =>
+    props.options.textAlign ? props.options.textAlign : 'left'};
 `;
 
 type Props = {
   children: React.Node,
   color?: string,
   size?: 'l' | 'm' | 's',
+  style?: Object,
+  textAlign?: string,
 };
 
 const H3 = (props: Props) => {
-  const { children, color, size } = props;
+  const { children, color, size, style, textAlign } = props;
 
-  return <ExtendedH3 options={{ color, size }}>{children}</ExtendedH3>;
+  return (
+    <ExtendedH3 options={{ color, size, textAlign }} style={style}>
+      {children}
+    </ExtendedH3>
+  );
 };
 
 export default H3;
