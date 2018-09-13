@@ -55,10 +55,20 @@ type Props = {
   bgColor?: string,
   outLined?: boolean,
   textColor?: string,
+  children: React.Node,
 };
 
 const WelcomeText = (props: Props) => {
-  const { label, onClick, icon, bgColor, outLined, textColor, ...rest } = props;
+  const {
+    label,
+    onClick,
+    icon,
+    bgColor,
+    outLined,
+    textColor,
+    children,
+    ...rest
+  } = props;
 
   return (
     <StyledButton
@@ -69,7 +79,7 @@ const WelcomeText = (props: Props) => {
       {icon ? (
         <ExtendedIcon icon={icon} options={{ icon, label }} size="lg" />
       ) : null}
-      {label}
+      {children || label}
     </StyledButton>
   );
 };
