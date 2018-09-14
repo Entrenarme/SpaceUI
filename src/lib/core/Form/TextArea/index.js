@@ -31,13 +31,12 @@ const IconContainer = styled.div`
   background-color: ${colors.gray.light};
 `;
 
-const ExtendedInput = styled.input`
+const ExtendedTextArea = styled.textarea`
   border: 1px solid ${colors.gray.light};
-  width: ${props => (props.options.icon ? '260px' : '300px')};
-  padding: ${props => (props.options.icon ? '10px' : '10px 10px 10px 15px')};
-  border-radius: ${props =>
-    props.options.icon ? '0px 50px 50px 0px' : '50px'};
   font-size: 14px;
+  width: 300px;
+  padding: 10px 10px 10px 15px;
+  border-radius: 50px;
   font-family: ${mainFont};
   color: ${colors.gray.dark};
 
@@ -49,40 +48,45 @@ const ExtendedInput = styled.input`
 type Props = {
   type?: string,
   placeholder?: string,
-  icon?: string,
   label: React.Node,
   labelColor?: string,
   style?: Object,
+  rows?: number,
+  cols?: number,
 };
 
-const TextInput = (props: Props) => {
-  const { type, placeholder, icon, label, labelColor, style, ...rest } = props;
+const TextArea = (props: Props) => {
+  const {
+    type,
+    placeholder,
+    label,
+    labelColor,
+    style,
+    rows,
+    cols,
+    ...rest
+  } = props;
 
   return (
     <div style={style}>
-      <LabelInput options={{ labelColor }}>{label}</LabelInput>
+      {label ? <LabelInput options={{ labelColor }}>{label}</LabelInput> : null}
       <GlobalInputContainer>
-        {icon ? (
-          <IconContainer>
-            <FontAwesomeIcon icon={icon} color={colors.gray.dark} />
-          </IconContainer>
-        ) : null}
-        <ExtendedInput
+        <ExtendedTextArea
           type={type}
           placeholder={placeholder}
-          options={{ icon }}
+          rows={rows}
+          cols={cols}
         />
       </GlobalInputContainer>
     </div>
   );
 };
 
-TextInput.defaultProps = {
+TextArea.defaultProps = {
   type: 'text',
   placeholder: null,
-  icon: '',
   labelColor: '',
   style: {},
 };
 
-export default TextInput;
+export default TextArea;
