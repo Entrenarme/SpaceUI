@@ -2,6 +2,8 @@
 import * as React from 'react';
 import Modal from 'react-modal';
 
+import './styles/custom.css';
+
 const customStyles = {
   content: {
     top: '50%',
@@ -15,6 +17,8 @@ const customStyles = {
 
 type Props = {
   children: React.Node,
+  open: boolean,
+  onClose: Function,
 };
 
 type State = {
@@ -22,28 +26,15 @@ type State = {
 };
 
 class Dialog extends React.Component<Props, State> {
-  state = {
-    open: false,
-  };
-
-  openModal = () => {
-    this.setState({ open: true });
-  };
-
-  closeModal = () => {
-    this.setState({ open: false });
-  };
-
   render() {
-    const { open } = this.state;
-    const { children } = this.props;
+    const { children, open, onClose } = this.props;
 
     return (
       <Modal
         isOpen={open}
-        onRequestClose={this.closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
+        onRequestClose={() => onClose()}
+        className="Modal"
+        overlayClassName="Overlay"
       >
         {children}
       </Modal>
