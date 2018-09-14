@@ -62,6 +62,13 @@ class ModalTestEnviroment extends React.Component<Props, State> {
           onClose={() => this.setState({ openModal: false })}
         >
           <H2>Hola</H2>
+          <p>
+            Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+            Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+            Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+            Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+            Lorem
+          </p>
         </Dialog>
       </div>
     );
