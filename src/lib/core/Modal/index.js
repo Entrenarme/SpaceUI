@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import Modal from 'react-modal';
-import styled from 'styled-components';
 
 import './styles/custom.css';
 
