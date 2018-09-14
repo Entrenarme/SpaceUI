@@ -8,6 +8,7 @@
     "ramda": "^0.25.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-modal": "^3.5.1",
     "react-scripts": "1.1.5",
     "react-slick": "^0.23.1",
     "styled-components": "^3.4.6",
@@ -24,6 +25,8 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/pro-light-svg-icons": "^5.3.1",
     "@storybook/addon-actions": "^3.4.10",
     "@storybook/addon-info": "^3.4.10",

@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import colors from '../../helpers/colors';
 import { mainFont } from '../../helpers/fonts';
@@ -42,7 +41,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const ExtendedIcon = styled(FontAwesomeIcon)`
+const ExtendedIconContainer = styled.div`
   position: ${props =>
     props.options.icon && props.options.label ? 'absolute' : 'initial'};
   left: ${props => (props.options.icon && props.options.label ? '15px' : null)};
@@ -67,7 +66,9 @@ const WelcomeText = (props: Props) => {
       {...rest}
     >
       {icon ? (
-        <ExtendedIcon icon={icon} options={{ icon, label }} size="lg" />
+        <ExtendedIconContainer options={{ icon, label }}>
+          {icon}
+        </ExtendedIconContainer>
       ) : null}
       {label}
     </StyledButton>
