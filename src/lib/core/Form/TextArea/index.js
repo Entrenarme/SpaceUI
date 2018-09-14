@@ -39,6 +39,7 @@ const ExtendedTextArea = styled.textarea`
   border-radius: 50px;
   font-family: ${mainFont};
   color: ${colors.gray.dark};
+  overflow: hidden;
 
   &:focus {
     outline: 0;
