@@ -1,14 +1,14 @@
 .Modal {
   position: absolute;
-  top: 40px;
   left: 40px;
   right: 40px;
-  bottom: 40px;
-  background-color: papayawhip;
+  top: 40%;
+  background-color: #fff;
   border-radius: 25px;
   max-width: 450px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
+  height: auto;
 }
 
 .Modal:focus {
@@ -22,5 +22,4 @@
   right: 0;
   bottom: 0;
   background-color: #000;
-  opacity: 0.75;
 }
