@@ -71,6 +71,7 @@ const TextInput = (props: Props) => {
           type={type}
           placeholder={placeholder}
           options={{ icon }}
+          {...rest}
         />
       </GlobalInputContainer>
     </div>

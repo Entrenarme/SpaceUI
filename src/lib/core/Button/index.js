@@ -35,7 +35,8 @@ const StyledButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   width: ${props =>
-    props.options.icon && !props.options.label ? '0px' : '300px'};
+    props.options.icon && !props.options.label ? '0px' : '100%'};
+  max-width: 320px;
 
   &:focus {
     outline: 0;
