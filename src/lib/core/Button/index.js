@@ -34,7 +34,8 @@ const StyledButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   width: ${props =>
-    props.options.icon && !props.options.label ? '0px' : '300px'};
+    props.options.icon && !props.options.label ? '0px' : '100%'};
+  max-width: 320px;
 
   &:focus {
     outline: 0;
@@ -54,10 +55,20 @@ type Props = {
   bgColor?: string,
   outLined?: boolean,
   textColor?: string,
+  children: React.Node,
 };
 
 const WelcomeText = (props: Props) => {
-  const { label, onClick, icon, bgColor, outLined, textColor, ...rest } = props;
+  const {
+    label,
+    onClick,
+    icon,
+    bgColor,
+    outLined,
+    textColor,
+    children,
+    ...rest
+  } = props;
 
   return (
     <StyledButton
@@ -70,7 +81,7 @@ const WelcomeText = (props: Props) => {
           {icon}
         </ExtendedIconContainer>
       ) : null}
-      {label}
+      {children || label}
     </StyledButton>
   );
 };
