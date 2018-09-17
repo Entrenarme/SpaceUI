@@ -75,7 +75,7 @@ const TextInput = (props: Props) => {
     name,
     style,
     field,
-    form: { touched, errors },
+    form,
     ...rest
   } = props;
 
@@ -97,9 +97,11 @@ const TextInput = (props: Props) => {
           {...rest}
         />
       </GlobalInputContainer>
-      {errors[field.name] && (
-        <ErrorTextStyle>{errors[field.name]}</ErrorTextStyle>
-      )}
+      {field && form
+        ? form.errors[field.name] && (
+            <ErrorTextStyle>{form.errors[field.name]}</ErrorTextStyle>
+          )
+        : null}
     </div>
   );
 };
