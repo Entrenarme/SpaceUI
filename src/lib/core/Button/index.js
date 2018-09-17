@@ -60,7 +60,7 @@ type Props = {
   disabled?: boolean,
 };
 
-const WelcomeText = (props: Props) => {
+const Button = (props: Props) => {
   const {
     label,
     onClick,
@@ -92,4 +92,4 @@ const WelcomeText = (props: Props) => {
   );
 };
 
-export default WelcomeText;
+export default Button;

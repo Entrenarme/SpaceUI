@@ -49,7 +49,10 @@ const ExtendedInput = styled.input`
 const ErrorTextStyle = styled.div`
   font-family: 'PT Sans';
   font-size: 0.75rem;
-  color: ${colors.red.error};
+  color: ${props =>
+    props.options.textErrorColor
+      ? props.options.textErrorColor
+      : colors.red.error};
   margin: 5px 0px 10px 0px;
 `;
 
@@ -63,6 +66,7 @@ type Props = {
   style?: Object,
   field: Object,
   form: Object,
+  textErrorColor?: string,
 };
 
 const TextInput = (props: Props) => {
@@ -74,6 +78,7 @@ const TextInput = (props: Props) => {
     labelColor,
     name,
     style,
+    textErrorColor,
     field,
     form: { touched, errors },
     ...rest
@@ -98,7 +103,9 @@ const TextInput = (props: Props) => {
         />
       </GlobalInputContainer>
       {errors[field.name] && (
-        <ErrorTextStyle>{errors[field.name]}</ErrorTextStyle>
+        <ErrorTextStyle options={{ textErrorColor }}>
+          {errors[field.name]}
+        </ErrorTextStyle>
       )}
     </div>
   );
