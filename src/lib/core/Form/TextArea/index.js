@@ -36,7 +36,7 @@ const ExtendedTextArea = styled.textarea`
   font-size: 14px;
   width: 300px;
   padding: 10px 10px 10px 15px;
-  border-radius: 50px;
+  border-radius: 20px;
   font-family: ${mainFont};
   color: ${colors.gray.dark};
   overflow: hidden;

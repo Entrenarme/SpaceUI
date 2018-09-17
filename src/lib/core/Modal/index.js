@@ -35,6 +35,7 @@ class Dialog extends React.Component<Props, State> {
         onRequestClose={() => onClose()}
         className="Modal"
         overlayClassName="Overlay"
+        ariaHideApp={false}
       >
         {children}
       </Modal>
