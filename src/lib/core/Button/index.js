@@ -56,6 +56,7 @@ type Props = {
   outLined?: boolean,
   textColor?: string,
   children: React.Node,
+  type?: string,
 };
 
 const WelcomeText = (props: Props) => {
@@ -67,12 +68,14 @@ const WelcomeText = (props: Props) => {
     outLined,
     textColor,
     children,
+    type,
     ...rest
   } = props;
 
   return (
     <StyledButton
       onClick={onClick}
+      type={type}
       options={{ icon, label, bgColor, outLined, textColor }}
       {...rest}
     >

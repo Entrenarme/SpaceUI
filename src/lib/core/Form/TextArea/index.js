@@ -46,14 +46,24 @@ const ExtendedTextArea = styled.textarea`
   }
 `;
 
+const ErrorTextStyle = styled.div`
+  font-family: 'PT Sans';
+  font-size: 0.75rem;
+  color: ${colors.red.error};
+  margin: 5px 0px 10px 0px;
+`;
+
 type Props = {
   type?: string,
   placeholder?: string,
   label: React.Node,
   labelColor?: string,
   style?: Object,
+  name?: string,
   rows?: number,
   cols?: number,
+  field: Object,
+  form: Object,
 };
 
 const TextArea = (props: Props) => {
@@ -63,8 +73,11 @@ const TextArea = (props: Props) => {
     label,
     labelColor,
     style,
+    name,
     rows,
     cols,
+    field,
+    form: { touched, errors },
     ...rest
   } = props;
 
@@ -75,10 +88,16 @@ const TextArea = (props: Props) => {
         <ExtendedTextArea
           type={type}
           placeholder={placeholder}
+          name={name}
           rows={rows}
           cols={cols}
+          {...field}
+          {...rest}
         />
       </GlobalInputContainer>
+      {errors[field.name] && (
+        <ErrorTextStyle>{errors[field.name]}</ErrorTextStyle>
+      )}
     </div>
   );
 };

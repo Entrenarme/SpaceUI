@@ -7,4 +7,7 @@ export default {
     light: 'rgba(244, 244, 244, 1)',
     dark: 'rgba(102, 102, 102, 1)',
   },
+  red: {
+    error: 'rgba(181, 60, 46, 1)',
+  },
 };

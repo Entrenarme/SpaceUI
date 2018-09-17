@@ -46,17 +46,38 @@ const ExtendedInput = styled.input`
   }
 `;
 
+const ErrorTextStyle = styled.div`
+  font-family: 'PT Sans';
+  font-size: 0.75rem;
+  color: ${colors.red.error};
+  margin: 5px 0px 10px 0px;
+`;
+
 type Props = {
   type?: string,
   placeholder?: string,
   icon?: string,
   label: React.Node,
   labelColor?: string,
+  name?: string,
   style?: Object,
+  field: Object,
+  form: Object,
 };
 
 const TextInput = (props: Props) => {
-  const { type, placeholder, icon, label, labelColor, style, ...rest } = props;
+  const {
+    type,
+    placeholder,
+    icon,
+    label,
+    labelColor,
+    name,
+    style,
+    field,
+    form: { touched, errors },
+    ...rest
+  } = props;
 
   return (
     <div style={style}>
@@ -70,10 +91,15 @@ const TextInput = (props: Props) => {
         <ExtendedInput
           type={type}
           placeholder={placeholder}
+          name={name}
           options={{ icon }}
+          {...field}
           {...rest}
         />
       </GlobalInputContainer>
+      {errors[field.name] && (
+        <ErrorTextStyle>{errors[field.name]}</ErrorTextStyle>
+      )}
     </div>
   );
 };
