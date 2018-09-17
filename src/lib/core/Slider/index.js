@@ -14,6 +14,7 @@ type Props = {
   disableDots?: boolean,
   invertedArrows?: boolean,
   disableArrows?: boolean,
+  initialSlide?: number,
   maxHeightSlick?: string,
 };
 
@@ -71,6 +72,7 @@ const Slider = ({
   disableDots,
   invertedArrows,
   disableArrows,
+  initialSlide,
   maxHeightSlick,
   ...rest
 }: Props) => {
@@ -79,6 +81,7 @@ const Slider = ({
     slidesToShow: itemsToShow,
     slidesToScroll: itemsToShow,
     infinite: React.Children.count(children) >= itemsToShow,
+    initialSlide,
     centerMode: true,
     nextArrow: (
       <Arrow

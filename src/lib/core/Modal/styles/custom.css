@@ -1,0 +1,26 @@
+.Modal {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  background-color: #fff;
+  border-radius: 25px;
+  max-width: 450px;
+  margin: auto;
+  padding: 20px;
+  height: auto;
+}
+
+.Modal:focus {
+  outline: none;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+}

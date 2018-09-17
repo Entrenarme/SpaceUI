@@ -59,3 +59,20 @@ storiesOf('Slider', module)
       ))}
     </Slider>
   ));
+
+storiesOf('Slider', module)
+  .addDecorator(ElementDecoration)
+  .add('starting at slide 2', () => (
+    <Slider itemsToShow={1} disableArrows initialSlide={1}>
+      {lessThan3.map(element => (
+        <div key={element}>
+          <MainCard>
+            Number: {element}
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            fermentum magna eu velit semper hendrerit.
+          </MainCard>
+        </div>
+      ))}
+    </Slider>
+  ));

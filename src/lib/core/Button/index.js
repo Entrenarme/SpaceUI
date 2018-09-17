@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import colors from '../../helpers/colors';
 import { mainFont } from '../../helpers/fonts';
@@ -35,16 +34,15 @@ const StyledButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   width: ${props =>
-    props.options.icon && !props.options.label ? '48px' : '100%'};
-  height: 48px;
-  max-width: 300px;
+    props.options.icon && !props.options.label ? '0px' : '100%'};
+  max-width: 320px;
 
   &:focus {
     outline: 0;
   }
 `;
 
-const ExtendedIcon = styled(FontAwesomeIcon)`
+const ExtendedIconContainer = styled.div`
   position: ${props =>
     props.options.icon && props.options.label ? 'absolute' : 'initial'};
   left: ${props => (props.options.icon && props.options.label ? '15px' : null)};
@@ -57,10 +55,20 @@ type Props = {
   bgColor?: string,
   outLined?: boolean,
   textColor?: string,
+  children: React.Node,
 };
 
 const WelcomeText = (props: Props) => {
-  const { label, onClick, icon, bgColor, outLined, textColor, ...rest } = props;
+  const {
+    label,
+    onClick,
+    icon,
+    bgColor,
+    outLined,
+    textColor,
+    children,
+    ...rest
+  } = props;
 
   return (
     <StyledButton
@@ -69,9 +77,11 @@ const WelcomeText = (props: Props) => {
       {...rest}
     >
       {icon ? (
-        <ExtendedIcon icon={icon} options={{ icon, label }} size="lg" />
+        <ExtendedIconContainer options={{ icon, label }}>
+          {icon}
+        </ExtendedIconContainer>
       ) : null}
-      {label}
+      {children || label}
     </StyledButton>
   );
 };
