@@ -11,8 +11,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "update-patch": "npm version patch",
     "buildw": "NODE_ENV=production webpack --config webpack.config.js",
     "build": "yarn buildw",
+    "publish:npm": "yarn update-patch && yarn build && npm publish ./dist",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
