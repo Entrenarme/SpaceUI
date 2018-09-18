@@ -103,7 +103,8 @@ const TextInput = (props: Props) => {
         />
       </GlobalInputContainer>
       {form && field
-        ? form.errors[field.name] && (
+        ? form.errors[field.name] &&
+          form.touched[field.name] && (
             <ErrorTextStyle options={{ textErrorColor }}>
               {form.errors[field.name]}
             </ErrorTextStyle>
