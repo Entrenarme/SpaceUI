@@ -80,7 +80,7 @@ const TextInput = (props: Props) => {
     style,
     textErrorColor,
     field,
-    form: { touched, errors },
+    form,
     ...rest
   } = props;
 
@@ -102,11 +102,13 @@ const TextInput = (props: Props) => {
           {...rest}
         />
       </GlobalInputContainer>
-      {errors[field.name] && (
-        <ErrorTextStyle options={{ textErrorColor }}>
-          {errors[field.name]}
-        </ErrorTextStyle>
-      )}
+      {form && field
+        ? form.errors[field.name] && (
+            <ErrorTextStyle options={{ textErrorColor }}>
+              {form.errors[field.name]}
+            </ErrorTextStyle>
+          )
+        : null}
     </div>
   );
 };
