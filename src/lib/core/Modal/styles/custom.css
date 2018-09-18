@@ -10,7 +10,22 @@
   height: auto;
 }
 
+.ModalNoMargins {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  background-color: #fff;
+  border-radius: 25px;
+  max-width: 450px;
+  margin: auto;
+  height: auto;
+}
+
 .Modal:focus {
+  outline: none;
+}
+
+.ModalNoMargins:focus {
   outline: none;
 }
 

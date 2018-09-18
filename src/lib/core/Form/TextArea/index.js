@@ -36,7 +36,7 @@ const ExtendedTextArea = styled.textarea`
   font-size: 14px;
   width: 300px;
   padding: 10px 10px 10px 15px;
-  border-radius: 50px;
+  border-radius: 20px;
   font-family: ${mainFont};
   color: ${colors.gray.dark};
   overflow: hidden;
@@ -49,7 +49,10 @@ const ExtendedTextArea = styled.textarea`
 const ErrorTextStyle = styled.div`
   font-family: 'PT Sans';
   font-size: 0.75rem;
-  color: ${colors.red.error};
+  color: ${props =>
+    props.options.textErrorColor
+      ? props.options.textErrorColor
+      : colors.red.error};
   margin: 5px 0px 10px 0px;
 `;
 
@@ -64,6 +67,7 @@ type Props = {
   cols?: number,
   field: Object,
   form: Object,
+  textErrorColor?: string,
 };
 
 const TextArea = (props: Props) => {
@@ -76,8 +80,9 @@ const TextArea = (props: Props) => {
     name,
     rows,
     cols,
+    textErrorColor,
     field,
-    form: { touched, errors },
+    form,
     ...rest
   } = props;
 
@@ -95,9 +100,13 @@ const TextArea = (props: Props) => {
           {...rest}
         />
       </GlobalInputContainer>
-      {errors[field.name] && (
-        <ErrorTextStyle>{errors[field.name]}</ErrorTextStyle>
-      )}
+      {form && field
+        ? form.errors[field.name] && (
+            <ErrorTextStyle options={{ textErrorColor }}>
+              {form.errors[field.name]}
+            </ErrorTextStyle>
+          )
+        : null}
     </div>
   );
 };
