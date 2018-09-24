@@ -54,7 +54,7 @@ const GlobalInputContainer = styled.div`
 `;
 
 const IconContainer = styled.div`
-  width: 40px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@ const ExtendedButton = styled.button`
   cursor: pointer;
   border: 1px solid ${colors.gray.light};
   width: 260px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 0px 50px 50px 0px;
   font-size: 14px;
   font-family: ${mainFont};
