@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { faPlus, faWarehouse } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faPaypal } from '@fortawesome/free-brands-svg-icons';
 
 import Button from './index';
 
@@ -87,6 +87,16 @@ storiesOf('Button/Outlined', module).add('With icon and text', () => (
     icon={<FontAwesomeIcon icon={faWhatsapp} size="lg" />}
     label="Test text"
     textColor="tomato"
+    onClick={() => console.log('hola')}
+    {...actions}
+  />
+));
+
+storiesOf('Button/FixedIcon', module).add('Normal', () => (
+  <Button
+    fixedIcon
+    icon={<FontAwesomeIcon icon={faPaypal} size="lg" />}
+    label="Send email"
     onClick={() => console.log('hola')}
     {...actions}
   />

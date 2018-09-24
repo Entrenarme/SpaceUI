@@ -48,6 +48,41 @@ const ExtendedIconContainer = styled.div`
   left: ${props => (props.options.icon && props.options.label ? '15px' : null)};
 `;
 
+const GlobalInputContainer = styled.div`
+  display: flex;
+  margin-top: 5px;
+`;
+
+const IconContainer = styled.div`
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid ${colors.gray.light};
+  border-radius: 50px 0px 0px 50px;
+  background-color: ${colors.gray.light};
+`;
+
+const ExtendedButton = styled.button`
+  display: flex;
+  padding-left: 15px !important;
+  cursor: pointer;
+  border: 1px solid ${colors.gray.light};
+  width: 260px;
+  padding: 15px;
+  border-radius: 0px 50px 50px 0px;
+  font-size: 14px;
+  font-family: ${mainFont};
+  color: ${colors.gray.dark};
+  background-color: #fff;
+  margin: 0;
+
+  &:focus {
+    outline: 0;
+  }
+`;
+
 type Props = {
   label?: React.Node,
   onClick?: Function,
@@ -58,6 +93,7 @@ type Props = {
   children: React.Node,
   type?: string,
   disabled?: boolean,
+  fixedIcon?: boolean,
 };
 
 const Button = (props: Props) => {
@@ -71,8 +107,21 @@ const Button = (props: Props) => {
     children,
     type,
     disabled,
+    containerIcon,
+    fixedIcon,
     ...rest
   } = props;
+
+  if (fixedIcon) {
+    return (
+      <GlobalInputContainer>
+        {icon ? <IconContainer onClick={onClick}>{icon}</IconContainer> : null}
+        <ExtendedButton onClick={onClick} {...rest}>
+          {children || label}
+        </ExtendedButton>
+      </GlobalInputContainer>
+    );
+  }
 
   return (
     <StyledButton
