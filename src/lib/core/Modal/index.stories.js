@@ -61,6 +61,7 @@ class ModalTestEnviroment extends React.Component<Props, State> {
           open={this.state.openModal}
           onClose={() => this.setState({ openModal: false })}
           noMargins={this.props.noMargins}
+          style={this.props.style}
         >
           <H2>Hola</H2>
           <p>
@@ -80,4 +81,8 @@ storiesOf('Dialog', module).add('Normal', () => <ModalTestEnviroment />);
 
 storiesOf('Dialog', module).add('With no margins content', () => (
   <ModalTestEnviroment noMargins />
+));
+
+storiesOf('Dialog', module).add('With custom styles', () => (
+  <ModalTestEnviroment style={{ content: { maxWidth: '100px' } }} />
 ));
