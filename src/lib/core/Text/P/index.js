@@ -51,7 +51,7 @@ function getMargin(props) {
 
 const ExtendedP = styled.p`
   font-family: ${props =>
-    props.options.size === 's' ? regularFont : mainFont};
+    props.options.fontFamily ? props.options.fontFamily : regularFont};
   font-size: ${props => setFontSize(props.options.size)};
   color: ${props => props.options.color};
   ${props => props.options && `text-transform: ${props.options.textTransform}`};
@@ -69,6 +69,7 @@ type Props = {
   halfMargin: 'halfMargin' | 'halfTopMargin' | 'halfBottomMargin' | '',
   style?: Object,
   fontWeight?: number,
+  fontFamily?: string,
 };
 
 const P = (props: Props) => {
@@ -81,11 +82,20 @@ const P = (props: Props) => {
     halfMargin,
     style,
     fontWeight,
+    fontFamily,
   } = props;
 
   return (
     <ExtendedP
-      options={{ color, size, textTransform, margin, halfMargin, fontWeight }}
+      options={{
+        color,
+        size,
+        textTransform,
+        margin,
+        halfMargin,
+        fontWeight,
+        fontFamily,
+      }}
       style={style}
     >
       {children}
