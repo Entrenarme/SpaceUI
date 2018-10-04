@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   justify-content: center;
   position: relative;
   border-radius: 50px;
-  padding: 15px 20px;
+  padding: ${props => (props.options.outLined ? '13px 20px' : '15px 20px')};
   border: 0;
   background: ${props => (props.options.outLined ? 'transparent' : null)};
   background-image: ${props =>
