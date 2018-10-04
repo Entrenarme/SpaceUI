@@ -22,6 +22,7 @@ type Props = {
   // noMargins remove padding and margin of the current modal, because some of
   // them implement images and other stuff that dosent need spaces
   noMargins?: boolean,
+  style?: Object,
 };
 
 type State = {
@@ -30,13 +31,14 @@ type State = {
 
 class Dialog extends React.Component<Props, State> {
   render() {
-    const { children, open, onClose, noMargins } = this.props;
+    const { children, open, onClose, noMargins, style } = this.props;
 
     return (
       <Modal
         isOpen={open}
         onRequestClose={() => onClose()}
         className={noMargins ? 'ModalNoMargins' : 'Modal'}
+        style={style}
         overlayClassName="Overlay"
         ariaHideApp={false}
       >

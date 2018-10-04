@@ -40,6 +40,7 @@ const ExtendedInput = styled.input`
   font-size: 14px;
   font-family: ${mainFont};
   color: ${colors.gray.dark};
+  margin: 0;
 
   &:focus {
     outline: 0;
@@ -47,13 +48,13 @@ const ExtendedInput = styled.input`
 `;
 
 const ErrorTextStyle = styled.div`
-  font-family: 'PT Sans';
+  font-family: 'Nunito';
   font-size: 0.75rem;
+  margin: 5px 0px 10px 0px;
   color: ${props =>
     props.options.textErrorColor
       ? props.options.textErrorColor
       : colors.red.error};
-  margin: 5px 0px 10px 0px;
 `;
 
 type Props = {
@@ -103,7 +104,8 @@ const TextInput = (props: Props) => {
         />
       </GlobalInputContainer>
       {form && field
-        ? form.errors[field.name] && (
+        ? form.errors[field.name] &&
+          form.touched[field.name] && (
             <ErrorTextStyle options={{ textErrorColor }}>
               {form.errors[field.name]}
             </ErrorTextStyle>

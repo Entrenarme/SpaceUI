@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   justify-content: center;
   position: relative;
   border-radius: 50px;
-  padding: 10px 20px;
+  padding: ${props => (props.options.outLined ? '13px 20px' : '15px 20px')};
   border: 0;
   background: ${props => (props.options.outLined ? 'transparent' : null)};
   background-image: ${props =>
@@ -27,6 +27,7 @@ const StyledButton = styled.button`
     props.options.bgColor && !props.options.outLined
       ? props.options.bgColor
       : null};
+  background-repeat: no-repeat;
   color: ${props =>
     props.options.textColor ? props.options.textColor : '#fff'};
   cursor: pointer;
@@ -34,7 +35,7 @@ const StyledButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   width: ${props =>
-    props.options.icon && !props.options.label ? '0px' : '100%'};
+    props.options.icon && !props.options.label ? '50px' : '100%'};
   max-width: 320px;
 
   &:focus {

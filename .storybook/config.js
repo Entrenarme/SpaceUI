@@ -2,7 +2,7 @@ import * as React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 require('typeface-montserrat');
-require('typeface-pt-sans');
+require('typeface-nunito');
 
 const req = require.context('../src/lib', true, /.stories.js$/);
 
