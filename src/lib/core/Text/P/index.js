@@ -51,7 +51,7 @@ function getMargin(props) {
 
 const ExtendedP = styled.p`
   font-family: ${props =>
-    props.options.fontFamily ? props.options.fontFamily : regularFont};
+    props.options.fontFamily ? props.options.fontFamily : mainFont};
   font-size: ${props => setFontSize(props.options.size)};
   color: ${props => props.options.color};
   ${props => props.options && `text-transform: ${props.options.textTransform}`};

@@ -55,7 +55,7 @@ storiesOf('Text/P', module).add('With custom font weight', () => (
 ));
 
 storiesOf('Text/P', module).add('With custom font family', () => (
-  <P fontFamily="Montserrat">
+  <P fontFamily="Nunito">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac
     tincidunt urna, vitae interdum quam. Donec semper vehicula mattis. Morbi
     convallis, nunc ut tincidunt suscipit, dolor nulla rhoncus massa, a luctus
