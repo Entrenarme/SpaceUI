@@ -56,6 +56,8 @@ const ExtendedP = styled.p`
   color: ${props => props.options.color};
   ${props => props.options && `text-transform: ${props.options.textTransform}`};
   ${props => getMargin(props)};
+  font-weight: ${props =>
+    props.options.fontWeight ? props.options.fontWeight : 400};
 `;
 
 type Props = {
@@ -66,6 +68,7 @@ type Props = {
   margin: 'noMargin' | 'noTopMargin' | 'noBottomMargin' | '',
   halfMargin: 'halfMargin' | 'halfTopMargin' | 'halfBottomMargin' | '',
   style?: Object,
+  fontWeight?: number,
 };
 
 const P = (props: Props) => {
@@ -77,11 +80,12 @@ const P = (props: Props) => {
     margin,
     halfMargin,
     style,
+    fontWeight,
   } = props;
 
   return (
     <ExtendedP
-      options={{ color, size, textTransform, margin, halfMargin }}
+      options={{ color, size, textTransform, margin, halfMargin, fontWeight }}
       style={style}
     >
       {children}

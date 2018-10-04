@@ -48,7 +48,7 @@ const ExtendedInput = styled.input`
 `;
 
 const ErrorTextStyle = styled.div`
-  font-family: 'PT Sans';
+  font-family: 'Nunito';
   font-size: 0.75rem;
   margin: 5px 0px 10px 0px;
   color: ${props =>

@@ -1,2 +1,2 @@
-export const regularFont = 'PT Sans, sans-serif';
+export const regularFont = 'Nunito';
 export const mainFont = 'Montserrat, sans-serif';

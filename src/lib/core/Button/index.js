@@ -27,6 +27,7 @@ const StyledButton = styled.button`
     props.options.bgColor && !props.options.outLined
       ? props.options.bgColor
       : null};
+  background-repeat: no-repeat;
   color: ${props =>
     props.options.textColor ? props.options.textColor : '#fff'};
   cursor: pointer;

@@ -47,7 +47,7 @@ const ExtendedTextArea = styled.textarea`
 `;
 
 const ErrorTextStyle = styled.div`
-  font-family: 'PT Sans';
+  font-family: 'Nunito';
   font-size: 0.75rem;
   color: ${props =>
     props.options.textErrorColor
