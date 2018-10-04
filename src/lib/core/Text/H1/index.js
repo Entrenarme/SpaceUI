@@ -65,13 +65,14 @@ type Props = {
   size?: 'l' | 'm' | 's',
   margin: 'noMargin' | 'noTopMargin' | 'noBottomMargin' | '',
   halfMargin: 'halfMargin' | 'halfTopMargin' | 'halfBottomMargin' | '',
+  style?: Object,
 };
 
 const H1 = (props: Props) => {
-  const { children, color, size, margin, halfMargin } = props;
+  const { children, color, size, margin, halfMargin, style } = props;
 
   return (
-    <ExtendedH1 options={{ color, size, margin, halfMargin }}>
+    <ExtendedH1 options={{ color, size, margin, halfMargin }} style={style}>
       {children}
     </ExtendedH1>
   );

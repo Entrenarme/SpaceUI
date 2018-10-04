@@ -12,7 +12,7 @@ const setFontSize = (size: string) => {
     case 's':
       return '12px';
     default:
-      return '15px';
+      return '16px';
   }
 };
 
@@ -65,13 +65,25 @@ type Props = {
   textTransform: 'uppercase' | 'lowercase' | 'capitalize',
   margin: 'noMargin' | 'noTopMargin' | 'noBottomMargin' | '',
   halfMargin: 'halfMargin' | 'halfTopMargin' | 'halfBottomMargin' | '',
+  style?: Object,
 };
 
 const P = (props: Props) => {
-  const { children, color, size, textTransform, margin, halfMargin } = props;
+  const {
+    children,
+    color,
+    size,
+    textTransform,
+    margin,
+    halfMargin,
+    style,
+  } = props;
 
   return (
-    <ExtendedP options={{ color, size, textTransform, margin, halfMargin }}>
+    <ExtendedP
+      options={{ color, size, textTransform, margin, halfMargin }}
+      style={style}
+    >
       {children}
     </ExtendedP>
   );
