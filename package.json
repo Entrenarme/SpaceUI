@@ -1,6 +1,6 @@
 {
-  "name": "space-ui",
-  "version": "0.1.15",
+  "name": "spacefit-ui",
+  "version": "0.1.19",
   "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
@@ -16,7 +16,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "publish:npm": "yarn update-patch && yarn build && npm publish ./dist",
+    "update-patch": "npm version patch"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.3.1",
