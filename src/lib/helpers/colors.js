@@ -1,7 +1,7 @@
 export default {
   buttonBackground: {
-    purpleGradient: 'rgba(140,27,171,1)',
-    pinkGradient: 'rgba(247,97,161,1)',
+    purpleGradient: 'rgba(235,99,107,1)',
+    pinkGradient: 'rgba(255,64,131,1)',
   },
   gray: {
     light: 'rgba(244, 244, 244, 1)',

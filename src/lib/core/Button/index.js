@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   background-image: ${props =>
     !props.options.outLined && !props.options.bgColor
       ? `linear-gradient(
-      to right,
+      270deg,
       ${colors.buttonBackground.purpleGradient},
       ${colors.buttonBackground.pinkGradient}
     ); `
