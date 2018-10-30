@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { mainFont, regularFont } from '../../../helpers/fonts';
+import { regularFont } from '../../../helpers/fonts';
 import colors from '../../../helpers/colors';
 
 const GlobalInputContainer = styled.div`
@@ -13,10 +13,11 @@ const GlobalInputContainer = styled.div`
 
 const LabelInput = styled.label`
   font-size: 12px;
-  font-family: ${mainFont};
+  font-family: ${regularFont};
   text-transform: uppercase;
   font-weight: 500;
   margin-left: 5px;
+  letter-spacing: 1.6px;
   color: ${props =>
     props.options.labelColor ? props.options.labelColor : '#ffffff'};
 `;
@@ -38,7 +39,9 @@ const ExtendedInput = styled.input`
   border-radius: ${props =>
     props.options.icon ? '0px 50px 50px 0px' : '50px'};
   font-size: 14px;
-  font-family: ${mainFont};
+  font-family: ${regularFont};
+  letter-spacing: ${props =>
+    props.options.letterSpacing ? props.options.letterSpacing : '1.6px'};
   color: ${colors.gray.dark};
   margin: 0;
 
@@ -68,6 +71,7 @@ type Props = {
   field: Object,
   form: Object,
   textErrorColor?: string,
+  letterSpacing?: number,
 };
 
 const TextInput = (props: Props) => {
@@ -82,6 +86,7 @@ const TextInput = (props: Props) => {
     textErrorColor,
     field,
     form,
+    letterSpacing,
     ...rest
   } = props;
 
@@ -98,7 +103,7 @@ const TextInput = (props: Props) => {
           type={type}
           placeholder={placeholder}
           name={name}
-          options={{ icon }}
+          options={{ icon, letterSpacing }}
           {...field}
           {...rest}
         />

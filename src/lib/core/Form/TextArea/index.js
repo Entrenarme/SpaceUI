@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { mainFont, regularFont } from '../../../helpers/fonts';
+import { regularFont } from '../../../helpers/fonts';
 import colors from '../../../helpers/colors';
 
 const GlobalInputContainer = styled.div`
@@ -13,7 +13,8 @@ const GlobalInputContainer = styled.div`
 
 const LabelInput = styled.label`
   font-size: 12px;
-  font-family: ${mainFont};
+  font-family: ${regularFont};
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   font-weight: 500;
   margin-left: 5px;
@@ -37,7 +38,9 @@ const ExtendedTextArea = styled.textarea`
   width: 300px;
   padding: 10px 10px 10px 15px;
   border-radius: 20px;
-  font-family: ${mainFont};
+  font-family: ${regularFont};
+  letter-spacing: ${props =>
+    props.options.letterSpacing ? props.options.letterSpacing : '1.6px'};
   color: ${colors.gray.dark};
   overflow: hidden;
 
@@ -68,6 +71,7 @@ type Props = {
   field: Object,
   form: Object,
   textErrorColor?: string,
+  letterSpacing?: number,
 };
 
 const TextArea = (props: Props) => {
@@ -83,6 +87,7 @@ const TextArea = (props: Props) => {
     textErrorColor,
     field,
     form,
+    letterSpacing,
     ...rest
   } = props;
 
@@ -93,6 +98,7 @@ const TextArea = (props: Props) => {
         <ExtendedTextArea
           type={type}
           placeholder={placeholder}
+          options={{ letterSpacing }}
           name={name}
           rows={rows}
           cols={cols}

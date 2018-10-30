@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { mainFont, regularFont } from '../../../helpers/fonts';
+import { regularFont } from '../../../helpers/fonts';
 import colors from '../../../helpers/colors';
 
 const setFontSize = (size: string) => {
@@ -51,7 +51,7 @@ function getMargin(props) {
 
 const ExtendedP = styled.p`
   font-family: ${props =>
-    props.options.fontFamily ? props.options.fontFamily : mainFont};
+    props.options.fontFamily ? props.options.fontFamily : regularFont};
   font-size: ${props => setFontSize(props.options.size)};
   color: ${props => props.options.color};
   ${props => props.options && `text-transform: ${props.options.textTransform}`};
