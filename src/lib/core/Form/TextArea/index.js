@@ -39,8 +39,6 @@ const ExtendedTextArea = styled.textarea`
   padding: 10px 10px 10px 15px;
   border-radius: 20px;
   font-family: ${regularFont};
-  letter-spacing: ${props =>
-    props.options.letterSpacing ? props.options.letterSpacing : '1.6px'};
   color: ${colors.gray.dark};
   overflow: hidden;
 
@@ -98,7 +96,6 @@ const TextArea = (props: Props) => {
         <ExtendedTextArea
           type={type}
           placeholder={placeholder}
-          options={{ letterSpacing }}
           name={name}
           rows={rows}
           cols={cols}
