@@ -1,13 +1,11 @@
-import * as React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 require('typeface-montserrat');
-require('typeface-pt-sans');
+require('typeface-nunito');
 
-const req = require.context('../src/lib', true, /.stories.js$/);
+addDecorator(withInfo());
 
-/* addDecorator(withInfo);
-addDecorator(storyFn => <div style={{ padding: '3rem' }}>{storyFn()}</div>); */
+const req = require.context('../src/core', true, /.stories.tsx$/);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
