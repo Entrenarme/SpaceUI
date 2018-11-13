@@ -57,7 +57,7 @@ interface ExtendedPProps {
     margin?: string;
     halfMargin?: string;
     textTransform?: string;
-    fontWeight?: number;
+    fontWeight?: number | string;
     fontFamily?: string;
   };
 }
@@ -74,14 +74,14 @@ const ExtendedP = styled.p<ExtendedPProps>`
 `;
 
 type Props = {
-  children: JSX.Element | string;
+  children: React.ReactNode;
   color?: string;
   size?: 'l' | 'm' | 's';
   textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
   margin?: 'noMargin' | 'noTopMargin' | 'noBottomMargin' | '';
   halfMargin?: 'halfMargin' | 'halfTopMargin' | 'halfBottomMargin' | '';
   style?: Object;
-  fontWeight?: number;
+  fontWeight?: number | string;
   fontFamily?: string;
 };
 

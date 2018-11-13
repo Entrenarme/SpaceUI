@@ -67,7 +67,7 @@ const ExtendedIconContainer = styled.div<ExtendedIconContainerProps>`
 
 interface Props {
   label?: JSX.Element | string;
-  onClick?: () => any;
+  onClick?: (e?: any) => any | void;
   icon?: JSX.Element;
   bgColor?: string;
   outLined?: boolean;
@@ -75,6 +75,8 @@ interface Props {
   children?: JSX.Element;
   type?: string;
   disabled?: boolean;
+  style?: {};
+  className?: string;
 }
 
 const Button = (props: Props) => {

@@ -1,6 +1,10 @@
 {
   "name": "spacefit-ui",
+<<<<<<< HEAD
   "version": "1.0.0",
+=======
+  "version": "1.0.1",
+>>>>>>> c7e9dd0db59d8ae3063b9575c9a158ec1d7863e8
   "description": "UI components for Spacefit platform",
   "author": "entrenarme",
   "license": "MIT",
