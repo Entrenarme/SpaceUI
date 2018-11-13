@@ -1,13 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-import ExampleComponent from 'spacefit-ui'
+import { Button } from 'spacefit-ui';
 
 export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
+  render() {
+    return <Button>hola!!</Button>;
   }
 }

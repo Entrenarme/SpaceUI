@@ -9,7 +9,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "spacefit-ui": "link:.."
+    "spacefit-ui": "link:..",
+    "styled-components": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

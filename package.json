@@ -4,7 +4,7 @@
   "description": "UI components for Spacefit platform",
   "author": "entrenarme",
   "license": "MIT",
-  "repository": "https://github.com/entrenarme/spacefit-ui",
+  "repository": "https://github.com/entrenarme/spaceui",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -19,24 +19,44 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
-  "dependencies": {},
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "styled-components": "^4.1.1"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@storybook/addon-actions": "^4.0.6",
+    "@storybook/addon-info": "^4.0.6",
+    "@storybook/addon-links": "^4.0.6",
+    "@storybook/addon-viewport": "^4.0.6",
+    "@storybook/addons": "^4.0.6",
+    "@storybook/react": "^4.0.6",
     "@svgr/rollup": "^2.4.1",
-    "@types/jest": "^23.1.5",
+    "@types/jest": "^23.3.9",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
+    "@types/react-modal": "^3.2.1",
+    "@types/react-slick": "^0.23.2",
+    "@types/storybook__addon-actions": "^3.4.1",
+    "@types/storybook__addon-info": "^3.4.2",
+    "@types/storybook__react": "^4.0.0",
+    "@types/styled-components": "^4.0.3",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
     "gh-pages": "^1.2.0",
+    "jest": "^23.6.0",
     "react": "^16.4.1",
+    "react-docgen-typescript-loader": "^3.0.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",
     "rollup": "^0.62.0",
@@ -47,9 +67,20 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
-    "typescript": "^2.8.3"
+    "styled-components": "^4.1.1",
+    "ts-jest": "^23.10.4",
+    "typeface-montserrat": "^0.0.54",
+    "typeface-nunito": "^0.0.54",
+    "typescript": "^3.1.6"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/pro-light-svg-icons": "^5.5.0",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "react-modal": "^3.6.1",
+    "react-slick": "^0.23.2"
+  }
 }
