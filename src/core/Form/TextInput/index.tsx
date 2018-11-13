@@ -83,10 +83,10 @@ type Props = {
   type?: string;
   placeholder?: string;
   icon?: IconProp;
-  label: JSX.Element | string;
+  label?: JSX.Element | string;
   labelColor?: string;
   name?: string;
-  style?: Object;
+  style?: {};
   field?: {
     name?: string;
   };
@@ -100,6 +100,9 @@ type Props = {
   };
   textErrorColor?: string;
   letterSpacing?: number;
+  value?: any;
+  onClick?: (e?: any) => any;
+  onChange?: (e?: any) => any;
 };
 
 const TextInput = (props: Props) => {
