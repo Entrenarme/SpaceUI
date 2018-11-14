@@ -37,10 +37,7 @@ storiesOf('Slider', module)
         </div>
       ))}
     </Slider>
-  ));
-
-storiesOf('Slider', module)
-  .addDecorator(ElementDecoration)
+  ))
   .add('with disabled arrows', () => (
     <Slider itemsToShow={1} disableArrows>
       {lessThan3.map(element => (
@@ -57,10 +54,7 @@ storiesOf('Slider', module)
         </div>
       ))}
     </Slider>
-  ));
-
-storiesOf('Slider', module)
-  .addDecorator(ElementDecoration)
+  ))
   .add('starting at slide 2', () => (
     <Slider itemsToShow={1} disableArrows initialSlide={1}>
       {lessThan3.map(element => (

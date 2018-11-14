@@ -27,8 +27,9 @@
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "styled-components": "^4.1.1",
-    "react-slick": "^0.23.2"
+    "react-slick": "^0.23.2",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^4.1.1"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.5.0",
@@ -69,6 +70,7 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.1.1",
     "ts-jest": "^23.10.4",
     "typeface-montserrat": "^0.0.54",
