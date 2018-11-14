@@ -1,5 +1,6 @@
 import * as React from 'react';
-import * as Modal from 'react-modal';
+// @ts-ignore
+import Modal from 'react-modal';
 
 import './styles/custom.css';
 
@@ -13,11 +14,7 @@ interface Props {
   style?: {};
 }
 
-interface State {
-  open: boolean;
-}
-
-class Dialog extends React.Component<Props, State> {
+class Dialog extends React.Component<Props> {
   render() {
     const { children, open, onClose, noMargins, style } = this.props;
 

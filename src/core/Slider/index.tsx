@@ -16,8 +16,8 @@ type Props = {
   disableArrows?: boolean;
   initialSlide?: number;
   maxHeightSlick?: string;
-  beforeChange?: () => {};
-  afterChange?: () => {};
+  beforeChange?: () => any;
+  afterChange?: () => any;
 };
 
 type ArrowProps = {

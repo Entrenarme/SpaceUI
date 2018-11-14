@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Button } from 'spacefit-ui';
+import { Dialog, Button } from 'spacefit-ui';
 
 export default class App extends Component {
   render() {
-    return <Button>hola!!</Button>;
+    console.log('Dialog', Dialog);
+    console.log('Button', Button);
+    return (
+      <Dialog open={true} onClose={() => {}}>
+        hola!!
+      </Dialog>
+    );
   }
 }
