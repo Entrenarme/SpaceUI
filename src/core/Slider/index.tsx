@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft } from '@fortawesome/pro-light-svg-icons';
 import styled from 'styled-components';
 
-// import './styles/slick-theme.css';
-// import './styles/slick.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import './styles/slick-theme.css';
+import './styles/slick.css';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 type Props = {

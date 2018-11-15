@@ -1,4 +1,5 @@
 export { default as Button } from './core/Button';
+export { default as ButtonGroup } from './core/Button/ButtonGroup';
 export { default as FormGroup } from './core/Form/FormGroup';
 export { default as TextArea } from './core/Form/TextArea';
 export { default as TextInput } from './core/Form/TextInput';

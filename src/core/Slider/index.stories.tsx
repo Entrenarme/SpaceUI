@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import Slider from './index';
+import DaySlider from './DaySlider.sample';
 
 const MainCard = styled.div`
   background-color: #fff;
@@ -69,3 +70,5 @@ storiesOf('Slider', module)
       ))}
     </Slider>
   ));
+
+storiesOf('Day Slider', module).add('day slider', () => <DaySlider />);

@@ -77,6 +77,7 @@ interface Props {
   disabled?: boolean;
   style?: {};
   className?: string;
+  name?: string;
 }
 
 const Button = (props: Props) => {
