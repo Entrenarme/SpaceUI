@@ -11,6 +11,7 @@ const ButtonsContainer = styled.div`
   display: flex;
   > button {
     border-radius: 0;
+    text-transform: uppercase;
 
     &:first-child {
       border-top-left-radius: 50px;
@@ -24,8 +25,8 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-function ButtonGroup({ children }: Props) {
-  return <ButtonsContainer>{children}</ButtonsContainer>;
+function ButtonGroup({ children, ...rest }: Props) {
+  return <ButtonsContainer {...rest}>{children}</ButtonsContainer>;
 }
 
 export default ButtonGroup;

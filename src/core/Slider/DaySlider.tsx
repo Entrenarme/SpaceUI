@@ -28,6 +28,16 @@ const SlideButton = styled.button`
   border: none;
 `;
 
+const StyledReactSlider = styled(ReactSlider)`
+  .slick-prev {
+    left: -15px;
+  }
+
+  .slick-next {
+    right: -15px;
+  }
+`;
+
 interface SlideProps {
   children: React.ReactNode;
   keyValue: number | string;
@@ -80,7 +90,7 @@ class DaySlider extends React.Component<Props, State> {
     const { children, ...rest } = this.props;
     return (
       <Provider value={this.state}>
-        <ReactSlider
+        <StyledReactSlider
           prevArrow={<Icon icon={faAngleLeft} />}
           nextArrow={<Icon icon={faAngleRight} />}
           beforeChange={this.startDragging}
@@ -88,7 +98,7 @@ class DaySlider extends React.Component<Props, State> {
           {...rest}
         >
           {children}
-        </ReactSlider>
+        </StyledReactSlider>
       </Provider>
     );
   }

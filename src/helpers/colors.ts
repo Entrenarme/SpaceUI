@@ -12,6 +12,8 @@ export default {
     error: 'rgba(181, 60, 46, 1)',
   },
   blue: {
+    text: 'rgba(83,98,230,1)',
     light: 'rgba(100,222,233,1)',
+    lightText: 'rgba(100,222,233,1)',
   },
 };

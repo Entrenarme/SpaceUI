@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import DaySlider from './DaySlider';
 import { mainFont } from '../../helpers/fonts';
-import * as colors from '../../helpers/colors';
+import colors from '../../helpers/colors';
 
 const days: Array<React.ReactNode> = [];
 const numDays = 30;
@@ -32,7 +32,7 @@ class DaySliderSample extends React.Component<{}, State> {
           marginTop: '50px',
         }}
       >
-        <div style={{ width: '80%', margin: '0 auto 0 auto' }}>
+        <div style={{ width: '90%', margin: '0 auto 0 auto' }}>
           <DaySlider infinite={false}>
             {days.map((day, index) => (
               <DaySlider.Slide
@@ -47,9 +47,7 @@ class DaySliderSample extends React.Component<{}, State> {
                     flexDirection: 'column',
                     fontFamily: mainFont,
                     color:
-                      index === activeSlide
-                        ? colors.default.blue.light
-                        : 'white',
+                      index === activeSlide ? colors.blue.lightText : 'white',
                     fontWeight: 600,
                     alignItems: 'center',
                     fontSize: '11px',
