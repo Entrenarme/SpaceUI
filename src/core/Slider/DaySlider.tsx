@@ -69,7 +69,7 @@ interface State {
 
 class DaySlider extends React.Component<Props, State> {
   static defaultProps = {
-    variableWidth: true,
+    variableWidth: false,
     swipeToSlide: true,
   };
 
@@ -91,6 +91,15 @@ class DaySlider extends React.Component<Props, State> {
     return (
       <Provider value={this.state}>
         <StyledReactSlider
+          slidesToShow={14}
+          responsive={[
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 7,
+              },
+            },
+          ]}
           prevArrow={<Icon icon={faAngleLeft} />}
           nextArrow={<Icon icon={faAngleRight} />}
           beforeChange={this.startDragging}
