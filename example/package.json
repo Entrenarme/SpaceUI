@@ -9,6 +9,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
+    "react-slick": "^0.23.2",
+    "slick-carousel": "^1.8.1",
     "spacefit-ui": "link:..",
     "styled-components": "^4.1.1"
   },

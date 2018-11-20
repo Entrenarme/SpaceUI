@@ -31,13 +31,13 @@ const ExtendedH3 = styled.h3<ExtendedH3Props>`
     props.options.textAlign ? props.options.textAlign : 'left'};
 `;
 
-type Props = {
+interface Props {
   children: JSX.Element | string;
   color?: string;
   size?: 'l' | 'm' | 's';
   style?: Object;
   textAlign?: string;
-};
+}
 
 const H3 = (props: Props) => {
   const { children, color, size, style, textAlign } = props;

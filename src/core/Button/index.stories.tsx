@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 import Button from './index';
+import ButtonGroupSample from './ButtonGroup.sample';
 
 const actions = {
   onClick: action('onClick'),
@@ -89,3 +90,5 @@ storiesOf('Button/Outlined', module).add('With icon and text', () => (
     {...actions}
   />
 ));
+
+storiesOf('Button/Toggle', module).add('Toggle', () => <ButtonGroupSample />);

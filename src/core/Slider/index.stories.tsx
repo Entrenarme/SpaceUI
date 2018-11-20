@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import Slider from './index';
+import DaySlider from './DaySlider.sample';
 
 const MainCard = styled.div`
   background-color: #fff;
@@ -37,10 +38,7 @@ storiesOf('Slider', module)
         </div>
       ))}
     </Slider>
-  ));
-
-storiesOf('Slider', module)
-  .addDecorator(ElementDecoration)
+  ))
   .add('with disabled arrows', () => (
     <Slider itemsToShow={1} disableArrows>
       {lessThan3.map(element => (
@@ -57,10 +55,7 @@ storiesOf('Slider', module)
         </div>
       ))}
     </Slider>
-  ));
-
-storiesOf('Slider', module)
-  .addDecorator(ElementDecoration)
+  ))
   .add('starting at slide 2', () => (
     <Slider itemsToShow={1} disableArrows initialSlide={1}>
       {lessThan3.map(element => (
@@ -75,3 +70,5 @@ storiesOf('Slider', module)
       ))}
     </Slider>
   ));
+
+storiesOf('Day Slider', module).add('day slider', () => <DaySlider />);

@@ -72,11 +72,12 @@ interface Props {
   bgColor?: string;
   outLined?: boolean;
   textColor?: string;
-  children?: JSX.Element;
+  children?: React.ReactNode;
   type?: string;
   disabled?: boolean;
   style?: {};
   className?: string;
+  name?: string;
 }
 
 const Button = (props: Props) => {
