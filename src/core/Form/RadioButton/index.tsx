@@ -6,12 +6,14 @@ import colors from '../../../helpers/colors';
 
 const Label = styled.label`
   display: flex;
+  display: inline-table;
 
   input[type='radio'] {
     height: 1px;
     width: 1px;
     margin: -1px;
     padding: 0;
+    position: absolute;
     @supports (clip-path: circle(0%)) {
       clip-path: circle(0%);
     }
