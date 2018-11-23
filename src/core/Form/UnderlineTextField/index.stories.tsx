@@ -15,6 +15,8 @@ storiesOf('Form/UnderlineTextField', module).add('Normal', () => (
     #00EBFF`,
     }}
   >
-    <UnderlineTextField label="Nombre" />
+    <UnderlineTextField label="Nombre" type="text" id="Nombre" />
+    <UnderlineTextField label="Email" type="text" id="Email" />
+    <UnderlineTextField label="Fecha" type="text" id="Fecha" />
   </div>
 ));

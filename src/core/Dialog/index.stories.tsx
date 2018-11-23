@@ -12,6 +12,7 @@ interface State {
 interface Props {
   noMargins?: boolean;
   style?: {};
+  header?: JSX.Element | Array<JSX.Element>;
 }
 
 class ModalTestEnviroment extends React.Component<Props, State> {
@@ -63,8 +64,8 @@ class ModalTestEnviroment extends React.Component<Props, State> {
         <Dialog
           open={this.state.openModal}
           onClose={() => this.setState({ openModal: false })}
-          noMargins={this.props.noMargins}
           style={this.props.style}
+          header={this.props.header}
         >
           <H2>Hola</H2>
           <p>
@@ -82,7 +83,7 @@ class ModalTestEnviroment extends React.Component<Props, State> {
 
 storiesOf('Dialog', module)
   .add('Normal', () => <ModalTestEnviroment />)
-  .add('With no margins content', () => <ModalTestEnviroment noMargins />)
   .add('With custom styles', () => (
     <ModalTestEnviroment style={{ content: { maxWidth: '100px' } }} />
-  ));
+  ))
+  .add('With header', () => <ModalTestEnviroment header={<p>hahahaha</p>} />);
