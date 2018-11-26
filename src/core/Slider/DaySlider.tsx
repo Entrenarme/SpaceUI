@@ -9,6 +9,8 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/pro-light-svg-icons';
 import './styles/slick-theme.css';
 import './styles/slick.css';
 
+import colors from '../../helpers/colors';
+
 interface Props {
   children: React.ReactNode;
   variableWidth?: boolean;
@@ -24,6 +26,10 @@ const Icon = styled(FontAwesomeIcon)`
   height: 20px !important;
   color: white !important;
   background-color: transparent !important;
+
+  @media (min-width: 768px) {
+    color: ${colors.gray.slideArrow} !important;
+  }
 `;
 
 const SlideButton = styled.button`

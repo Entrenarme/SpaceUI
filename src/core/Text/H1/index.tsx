@@ -79,18 +79,25 @@ interface Props {
 }
 
 const H1 = (props: Props) => {
-  const { children, color, size, margin, halfMargin, style } = props;
+  const {
+    children,
+    color,
+    size,
+    margin = '',
+    halfMargin = '',
+    style,
+    ...rest
+  } = props;
 
   return (
-    <ExtendedH1 options={{ color, size, margin, halfMargin }} style={style}>
+    <ExtendedH1
+      options={{ color, size, margin, halfMargin }}
+      style={style}
+      {...rest}
+    >
       {children}
     </ExtendedH1>
   );
-};
-
-H1.defaultProps = {
-  margin: '',
-  halfMargin: '',
 };
 
 export default H1;

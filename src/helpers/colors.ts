@@ -10,6 +10,7 @@ export default {
     disabledBackground: 'rgb(232, 232, 232)',
     toggleBg: 'rgba(185,185,185,0.5)',
     toggleBall: 'rgba(232,232,232,1)',
+    slideArrow: 'rgba(123, 139, 147, 1)',
   },
   red: {
     error: 'rgba(181, 60, 46, 1)',
