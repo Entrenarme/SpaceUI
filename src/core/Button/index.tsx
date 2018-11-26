@@ -15,9 +15,12 @@ interface StyledButtonProps {
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   position: relative;
   border-radius: 50px;
   padding: ${props => (props.options.outLined ? '13px 20px' : '15px 20px')};

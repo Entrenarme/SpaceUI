@@ -40,10 +40,10 @@ type Props = {
 };
 
 const H2 = (props: Props) => {
-  const { children, color, size, style, textAlign } = props;
+  const { children, color, size, style, textAlign, ...rest } = props;
 
   return (
-    <ExtendedH2 options={{ color, size, textAlign }} style={style}>
+    <ExtendedH2 options={{ color, size, textAlign }} style={style} {...rest}>
       {children}
     </ExtendedH2>
   );
