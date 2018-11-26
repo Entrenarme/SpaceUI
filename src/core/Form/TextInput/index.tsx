@@ -41,7 +41,6 @@ const IconContainer = styled.div`
 interface ExtendedInputProps {
   options: {
     icon?: IconProp;
-    letterSpacing?: number;
   };
 }
 
@@ -53,8 +52,6 @@ const ExtendedInput = styled.input<ExtendedInputProps>`
     props.options.icon ? '0px 50px 50px 0px' : '50px'};
   font-size: 14px;
   font-family: ${regularFont};
-  letter-spacing: ${props =>
-    props.options.letterSpacing ? props.options.letterSpacing : '1.6px'};
   color: ${colors.gray.dark};
   margin: 0;
 
@@ -117,7 +114,6 @@ const TextInput = (props: Props) => {
     textErrorColor,
     field,
     form,
-    letterSpacing,
     ...rest
   } = props;
 
@@ -134,7 +130,7 @@ const TextInput = (props: Props) => {
           type={type}
           placeholder={placeholder}
           name={name}
-          options={{ icon, letterSpacing }}
+          options={{ icon }}
           {...field}
           {...rest}
         />
