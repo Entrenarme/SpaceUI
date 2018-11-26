@@ -8,6 +8,7 @@ import { regularFont } from '../../../helpers/fonts';
 const Label = styled.label`
   color: white;
   display: inline-table;
+  cursor: pointer;
 
   > span {
     display: flex;

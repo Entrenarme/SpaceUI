@@ -14,6 +14,7 @@ interface LabelProps {
 
 const Label = styled.label<LabelProps>`
   display: inline-table;
+  cursor: pointer;
 
   input[type='checkbox'] {
     height: 1px;

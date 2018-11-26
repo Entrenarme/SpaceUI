@@ -7,6 +7,7 @@ import colors from '../../../helpers/colors';
 const Label = styled.label`
   display: flex;
   display: inline-table;
+  cursor: pointer;
 
   input[type='radio'] {
     height: 1px;
