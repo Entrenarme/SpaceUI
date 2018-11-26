@@ -26,21 +26,13 @@ const LabelInput = styled.label<LabelInputProps>`
     props.options.labelColor ? props.options.labelColor : '#ffffff'};
 `;
 
-interface ExtendedTextAreaProps {
-  options: {
-    letterSpacing?: number;
-  };
-}
-
-const ExtendedTextArea = styled.textarea<ExtendedTextAreaProps>`
+const ExtendedTextArea = styled.textarea`
   border: 1px solid ${colors.gray.light};
   font-size: 14px;
   width: 300px;
   padding: 10px 10px 10px 15px;
   border-radius: 20px;
   font-family: ${regularFont};
-  letter-spacing: ${props =>
-    props.options.letterSpacing ? props.options.letterSpacing : '1.6px'};
   color: ${colors.gray.dark};
   overflow: hidden;
 
@@ -80,7 +72,6 @@ interface Props {
     errors?: { [key: string]: string };
   };
   textErrorColor?: string;
-  letterSpacing?: number;
 }
 
 const TextArea = (props: Props) => {
@@ -95,7 +86,6 @@ const TextArea = (props: Props) => {
     textErrorColor,
     field,
     form,
-    letterSpacing,
     ...rest
   } = props;
 
@@ -105,7 +95,6 @@ const TextArea = (props: Props) => {
       <GlobalInputContainer>
         <ExtendedTextArea
           placeholder={placeholder}
-          options={{ letterSpacing }}
           name={name}
           rows={rows}
           cols={cols}
