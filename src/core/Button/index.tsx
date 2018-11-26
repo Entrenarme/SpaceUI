@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinnerThird } from '@fortawesome/pro-light-svg-icons';
 
@@ -96,10 +96,6 @@ const loadingSpin = keyframes`
   to {transform:rotate(360deg);}
 `;
 
-const loadingSpinAnimation = css`
-  ${loadingSpin} 1s infinite
-`;
-
 interface ExtendedIconContainerProps {
   options: {
     icon?: JSX.Element;
@@ -117,7 +113,8 @@ const ExtendedIconContainer = styled.div<ExtendedIconContainerProps>`
     (props.options.icon || props.options.loading) && props.options.label
       ? '15px'
       : null};
-  animation: ${props => (props.options.loading ? loadingSpinAnimation : null)};
+  animation: ${props =>
+    props.options.loading ? `${loadingSpin} 1s infinite` : null};
 `;
 
 interface Props {
