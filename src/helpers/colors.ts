@@ -8,6 +8,8 @@ export default {
     dark: 'rgba(102, 102, 102, 1)',
     text: 'rgba(111,129,138,1)',
     disabledBackground: 'rgb(232, 232, 232)',
+    toggleBg: 'rgba(185,185,185,0.5)',
+    toggleBall: 'rgba(232,232,232,1)',
   },
   red: {
     error: 'rgba(181, 60, 46, 1)',
@@ -17,5 +19,7 @@ export default {
     light: 'rgba(100,222,233,1)',
     lightText: 'rgba(100,222,233,1)',
     modalHeader: 'rgb(80, 80, 230)',
+    toggleBg: 'rgba(81,81,229,0.5)',
+    toggle: 'rgba(81,81,229,1)',
   },
 };

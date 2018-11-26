@@ -14,6 +14,9 @@ interface Props {
   variableWidth?: boolean;
   swipeToSlide?: boolean;
   infinite?: boolean;
+  afterSlideChange?: (current: number) => void;
+  showLeftArrow: boolean;
+  showRightArrow: boolean;
 }
 
 const Icon = styled(FontAwesomeIcon)`
@@ -28,13 +31,22 @@ const SlideButton = styled.button`
   border: none;
 `;
 
-const StyledReactSlider = styled(ReactSlider)`
+interface ReactSliderProps {
+  options: {
+    showLeftArrow: boolean;
+    showRightArrow: boolean;
+  };
+}
+
+const StyledReactSlider = styled(ReactSlider)<ReactSliderProps>`
   .slick-prev {
     left: -15px;
+    ${props => !props.options.showLeftArrow && 'opacity: 0'};
   }
 
   .slick-next {
     right: -15px;
+    ${props => !props.options.showRightArrow && 'opacity: 0'};
   }
 `;
 
@@ -71,6 +83,9 @@ class DaySlider extends React.Component<Props, State> {
   static defaultProps = {
     variableWidth: false,
     swipeToSlide: true,
+    afterSlideChange: () => {},
+    showLeftArrow: true,
+    showRightArrow: true,
   };
 
   static Slide = (props: SlideProps) => (
@@ -84,13 +99,20 @@ class DaySlider extends React.Component<Props, State> {
   };
 
   startDragging = () => this.setState({ isDragging: true });
-  stopDragging = () => this.setState({ isDragging: false });
+  stopDragging = (currentSlide: number) => {
+    const { afterSlideChange } = this.props;
+    this.setState({ isDragging: false });
+    if (afterSlideChange) {
+      afterSlideChange(currentSlide);
+    }
+  };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, showLeftArrow, showRightArrow, ...rest } = this.props;
     return (
       <Provider value={this.state}>
         <StyledReactSlider
+          options={{ showLeftArrow, showRightArrow }}
           slidesToShow={14}
           responsive={[
             {

@@ -12,11 +12,13 @@ for (let i = 1; i <= numDays; i++) {
 
 interface State {
   activeSlide: number | null;
+  currentSlide: number;
 }
 
 class DaySliderSample extends React.Component<{}, State> {
   state: State = {
     activeSlide: null,
+    currentSlide: 0,
   };
 
   onSlideClick = (slideInfo: any) => {
@@ -24,7 +26,7 @@ class DaySliderSample extends React.Component<{}, State> {
   };
 
   render() {
-    const { activeSlide } = this.state;
+    const { activeSlide, currentSlide } = this.state;
     return (
       <div
         style={{
@@ -33,7 +35,14 @@ class DaySliderSample extends React.Component<{}, State> {
         }}
       >
         <div style={{ width: '90%', margin: '0 auto 0 auto' }}>
-          <DaySlider infinite={false}>
+          <DaySlider
+            infinite={false}
+            afterSlideChange={(current: number) =>
+              this.setState({ currentSlide: current })
+            }
+            showLeftArrow={currentSlide > 0 ? true : false}
+            showRightArrow={currentSlide >= 30 - 7 ? false : true}
+          >
             {days.map((day, index) => (
               <DaySlider.Slide
                 key={index}
