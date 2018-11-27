@@ -40,10 +40,10 @@ interface Props {
 }
 
 const H3 = (props: Props) => {
-  const { children, color, size, style, textAlign } = props;
+  const { children, color, size, style, textAlign, ...rest } = props;
 
   return (
-    <ExtendedH3 options={{ color, size, textAlign }} style={style}>
+    <ExtendedH3 options={{ color, size, textAlign }} style={style} {...rest}>
       {children}
     </ExtendedH3>
   );

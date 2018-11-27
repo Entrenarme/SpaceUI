@@ -52,7 +52,7 @@ const Label = styled.label`
 `;
 
 interface Props {
-  label: string;
+  label: React.ReactNode;
 }
 
 function RadioButton({
