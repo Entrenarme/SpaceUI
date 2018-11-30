@@ -90,12 +90,12 @@ const P = (props: Props) => {
     children,
     color,
     size,
-    textTransform,
-    margin,
-    halfMargin,
     style,
     fontWeight,
     fontFamily,
+    textTransform = 'none',
+    margin = '',
+    halfMargin = '',
   } = props;
 
   return (
@@ -114,12 +114,6 @@ const P = (props: Props) => {
       {children}
     </ExtendedP>
   );
-};
-
-P.defaultProps = {
-  textTransform: 'none',
-  margin: '',
-  halfMargin: '',
 };
 
 export default P;
