@@ -104,16 +104,16 @@ type Props = {
 
 const TextInput = (props: Props) => {
   const {
-    type,
-    placeholder,
-    icon,
     label,
-    labelColor,
     name,
-    style,
     textErrorColor,
     field,
     form,
+    placeholder,
+    icon,
+    style,
+    type = 'text',
+    labelColor = '',
     ...rest
   } = props;
 
@@ -145,14 +145,6 @@ const TextInput = (props: Props) => {
         : null}
     </div>
   );
-};
-
-TextInput.defaultProps = {
-  type: 'text',
-  placeholder: null,
-  icon: '',
-  labelColor: '',
-  style: {},
 };
 
 export default TextInput;
