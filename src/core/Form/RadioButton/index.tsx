@@ -46,8 +46,8 @@ const Label = styled.label`
   }
 
   input[type='radio']:checked + span::before {
-    box-shadow: 0 0 0 0.15em ${colors.blue.light};
-    background-color: ${colors.blue.light};
+    box-shadow: 0 0 0 0.15em ${colors.blue.main};
+    background-color: ${colors.blue.main};
   }
 `;
 

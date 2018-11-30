@@ -16,11 +16,11 @@ export default {
     error: 'rgba(181, 60, 46, 1)',
   },
   blue: {
+    main: 'rgba(81,81,229,1)',
     text: 'rgba(83,98,230,1)',
     light: 'rgba(100,222,233,1)',
     lightText: 'rgba(100,222,233,1)',
     modalHeader: 'rgb(80, 80, 230)',
     toggleBg: 'rgba(81,81,229,0.5)',
-    toggle: 'rgba(81,81,229,1)',
   },
 };

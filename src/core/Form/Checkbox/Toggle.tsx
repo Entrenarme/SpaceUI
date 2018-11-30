@@ -81,7 +81,7 @@ function Checkbox({
   bgColor = colors.gray.toggleBg,
   ballColor = colors.gray.toggleBall,
   bgActiveColor = colors.blue.toggleBg,
-  ballActiveColor = colors.blue.toggle,
+  ballActiveColor = colors.blue.main,
   ...rest
 }: React.InputHTMLAttributes<HTMLInputElement> & Props) {
   return (
