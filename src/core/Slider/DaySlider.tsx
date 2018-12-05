@@ -122,7 +122,7 @@ class DaySlider extends React.Component<Props, State> {
           slidesToShow={14}
           responsive={[
             {
-              breakpoint: 768,
+              breakpoint: 1024,
               settings: {
                 slidesToShow: 7,
               },
