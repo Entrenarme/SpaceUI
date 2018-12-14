@@ -4,7 +4,18 @@ import styled from 'styled-components';
 import { regularFont } from '../../../helpers/fonts';
 import colors from '../../../helpers/colors';
 
-const Label = styled.label`
+interface LabelProps {
+  options: {
+    outDefaultColor: string;
+    outSelectedColor: string;
+    bgColor: string;
+    outDefaultColorDesktop: string;
+    outSelectedColorDesktop: string;
+    bgColorDesktop: string;
+  };
+}
+
+const Label = styled.label<LabelProps>`
   display: flex;
   display: inline-table;
   cursor: pointer;
@@ -40,27 +51,63 @@ const Label = styled.label`
       display: inline-block;
       margin-right: 16px;
       border-radius: 100%;
-      border: 5px solid #fff;
-      box-shadow: 0 0 0 0.15em ${colors.gray.text};
+      border: 5px solid ${props => props.options.bgColor};
+      box-shadow: 0 0 0 0.15em ${props => props.options.outDefaultColor};
+      background-color: ${props => props.options.bgColor};
+
+      @media (min-width: 768px) {
+        border: 5px solid ${props => props.options.bgColorDesktop};
+        box-shadow: 0 0 0 0.15em
+          ${props => props.options.outDefaultColorDesktop};
+        background-color: ${props => props.options.bgColorDesktop};
+        margin-right: 10px;
+      }
     }
   }
 
   input[type='radio']:checked + span::before {
-    box-shadow: 0 0 0 0.15em ${colors.blue.main};
-    background-color: ${colors.blue.main};
+    box-shadow: inset 0 0 0 1em ${props => props.options.outSelectedColor},
+      0 0 0 0.15em ${props => props.options.outSelectedColor};
+
+    @media (min-width: 768px) {
+      box-shadow: inset 0 0 0 1em
+          ${props => props.options.outSelectedColorDesktop},
+        0 0 0 0.15em ${props => props.options.outSelectedColorDesktop};
+    }
   }
 `;
 
 interface Props {
   label: React.ReactNode;
+  outDefaultColor?: string;
+  outSelectedColor?: string;
+  bgColor?: string;
+  outDefaultColorDesktop?: string;
+  outSelectedColorDesktop?: string;
+  bgColorDesktop?: string;
 }
 
 function RadioButton({
   label,
+  outDefaultColor = colors.gray.text,
+  outSelectedColor = colors.blue.main,
+  bgColor = 'white',
+  outDefaultColorDesktop = colors.gray.text,
+  outSelectedColorDesktop = colors.blue.main,
+  bgColorDesktop = 'white',
   ...rest
 }: Props & React.InputHTMLAttributes<any>) {
   return (
-    <Label>
+    <Label
+      options={{
+        outDefaultColor,
+        outSelectedColor,
+        bgColor,
+        outDefaultColorDesktop,
+        outSelectedColorDesktop,
+        bgColorDesktop,
+      }}
+    >
       <input type="radio" {...rest} />
       <span>{label}</span>
     </Label>

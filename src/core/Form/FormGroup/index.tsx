@@ -36,9 +36,9 @@ interface Props {
   children: any;
 }
 
-function FormGroup({ legend, children, hideLegend = true }: Props) {
+function FormGroup({ legend, children, hideLegend = true, ...rest }: Props) {
   return (
-    <Fieldset options={{ hideLegend }}>
+    <Fieldset options={{ hideLegend }} {...rest}>
       <legend>{legend}</legend>
       {children}
     </Fieldset>

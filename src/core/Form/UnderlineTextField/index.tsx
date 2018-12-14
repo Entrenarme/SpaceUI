@@ -3,86 +3,75 @@ import styled from 'styled-components';
 
 import { regularFont } from '../../../helpers/fonts';
 
-const Container = styled.div`
-  .form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    font-family: ${regularFont};
+const Label = styled.label`
+  margin-top: 25px;
+  width: 100%;
+  font-family: ${regularFont};
+  position: relative;
+
+  .focused {
+    transform: translate3d(0, -30px, 0);
+    font-size: 10px;
   }
 
-  .form__field {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid #fff;
-    outline: 0;
-    font-size: 14px;
-    color: #fff;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-  }
-
-  .form__field::placeholder {
-    color: transparent;
-  }
-
-  .form__field:placeholder-shown ~ .form__label {
-    font-size: 16px;
-    cursor: text;
-    top: 20px;
-  }
-
-  label,
-  .form__field:focus ~ .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
+  span {
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
     font-size: 12px;
-    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
   }
 
-  .form__field:focus ~ .form__label {
-    color: #fff;
-  }
-
-  .form__field:focus {
-    padding-bottom: 6px;
-    border-bottom: 2px solid #fff;
+  input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 5px;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    font-family: ${regularFont};
   }
 `;
 
 interface Props {
-  type?: string;
   label: string;
-  id?: string;
 }
 
-const UnderlineTextField = ({ type, label, ...rest }: Props) => {
-  const labelProps: {
-    className: string;
-    for?: string;
-  } = {
-    className: 'form__label',
+interface State {
+  focused: boolean;
+}
+
+class UnderlineTextField extends React.Component<
+  Props & React.InputHTMLAttributes<HTMLInputElement>,
+  State
+> {
+  state = {
+    focused: false,
   };
-  if (rest.id) {
-    labelProps.for = rest.id;
+
+  onFocus = () => this.setState({ focused: true });
+
+  onBlur = (e: React.SyntheticEvent<HTMLInputElement>) => {
+    if (!e.currentTarget.value) {
+      this.setState({ focused: false });
+    }
+  };
+
+  render() {
+    const { label, ...rest } = this.props;
+    const { focused } = this.state;
+
+    return (
+      <Label>
+        <input {...rest} onFocus={this.onFocus} onBlur={this.onBlur} />
+        <span className={focused || rest.value ? 'focused' : ''}>{label}</span>
+      </Label>
+    );
   }
-  return (
-    <Container>
-      <div className="form__group">
-        <input
-          type={type}
-          className="form__field"
-          placeholder={label}
-          {...rest}
-        />
-        <label {...labelProps}>{label}</label>
-      </div>
-    </Container>
-  );
-};
+}
 
 export default UnderlineTextField;

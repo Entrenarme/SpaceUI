@@ -13,6 +13,8 @@ storiesOf('Form/UnderlineTextField', module).add('Normal', () => (
     to bottom,
     #008DEB,
     #00EBFF`,
+      display: 'flex',
+      flexDirection: 'column',
     }}
   >
     <UnderlineTextField label="Nombre" type="text" id="Nombre" />
