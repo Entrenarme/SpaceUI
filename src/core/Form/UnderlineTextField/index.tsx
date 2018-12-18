@@ -53,11 +53,19 @@ class UnderlineTextField extends React.Component<
     focused: false,
   };
 
-  onFocus = () => this.setState({ focused: true });
+  onFocus = (rest: any) => (e: React.SyntheticEvent<HTMLInputElement>) => {
+    this.setState({ focused: true });
+    if (rest && rest.onFocus) {
+      rest.onFocus(e);
+    }
+  };
 
-  onBlur = (e: React.SyntheticEvent<HTMLInputElement>) => {
+  onBlur = (rest: any) => (e: React.SyntheticEvent<HTMLInputElement>) => {
     if (!e.currentTarget.value) {
       this.setState({ focused: false });
+    }
+    if (rest && rest.onBlur) {
+      rest.onBlur(e);
     }
   };
 
@@ -67,7 +75,11 @@ class UnderlineTextField extends React.Component<
 
     return (
       <Label>
-        <input {...rest} onFocus={this.onFocus} onBlur={this.onBlur} />
+        <input
+          {...rest}
+          onFocus={this.onFocus(rest)}
+          onBlur={this.onBlur(rest)}
+        />
         <span className={focused || rest.value ? 'focused' : ''}>{label}</span>
       </Label>
     );

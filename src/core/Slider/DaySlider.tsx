@@ -119,6 +119,7 @@ class DaySlider extends React.Component<Props, State> {
       <Provider value={this.state}>
         <StyledReactSlider
           options={{ showLeftArrow, showRightArrow }}
+          slidesToScroll={7}
           slidesToShow={14}
           responsive={[
             {
