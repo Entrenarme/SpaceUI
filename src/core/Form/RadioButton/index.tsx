@@ -12,6 +12,7 @@ interface LabelProps {
     outDefaultColorDesktop: string;
     outSelectedColorDesktop: string;
     bgColorDesktop: string;
+    negativeColor: boolean;
   };
 }
 
@@ -38,7 +39,8 @@ const Label = styled.label<LabelProps>`
     font-family: ${regularFont};
     font-size: 1rem;
     font-weight: 400;
-    color: ${colors.gray.text};
+    color: ${props =>
+      props.options.negativeColor ? 'white' : colors.gray.text};
     white-space: nowrap;
     display: flex;
     align-items: center;
@@ -51,15 +53,36 @@ const Label = styled.label<LabelProps>`
       display: inline-block;
       margin-right: 16px;
       border-radius: 100%;
-      border: 5px solid ${props => props.options.bgColor};
-      box-shadow: 0 0 0 0.15em ${props => props.options.outDefaultColor};
-      background-color: ${props => props.options.bgColor};
+      border: 5px solid
+        ${props =>
+          props.options.negativeColor
+            ? props.options.bgColorDesktop
+            : props.options.bgColor};
+      box-shadow: 0 0 0 0.15em
+        ${props =>
+          props.options.negativeColor
+            ? props.options.outDefaultColorDesktop
+            : props.options.outDefaultColor};
+      background-color: ${props =>
+        props.options.negativeColor
+          ? props.options.bgColorDesktop
+          : props.options.bgColor};
 
       @media (min-width: 768px) {
-        border: 5px solid ${props => props.options.bgColorDesktop};
+        border: 5px solid
+          ${props =>
+            !props.options.negativeColor
+              ? props.options.bgColorDesktop
+              : props.options.bgColor};
         box-shadow: 0 0 0 0.15em
-          ${props => props.options.outDefaultColorDesktop};
-        background-color: ${props => props.options.bgColorDesktop};
+          ${props =>
+            !props.options.negativeColor
+              ? props.options.outDefaultColorDesktop
+              : props.options.outDefaultColor};
+        background-color: ${props =>
+          !props.options.negativeColor
+            ? props.options.bgColorDesktop
+            : props.options.bgColor};
         margin-right: 10px;
       }
     }
@@ -85,6 +108,7 @@ interface Props {
   outDefaultColorDesktop?: string;
   outSelectedColorDesktop?: string;
   bgColorDesktop?: string;
+  negativeColor?: boolean;
 }
 
 function RadioButton({
@@ -95,6 +119,7 @@ function RadioButton({
   outDefaultColorDesktop = colors.gray.text,
   outSelectedColorDesktop = colors.blue.main,
   bgColorDesktop = 'white',
+  negativeColor = false,
   ...rest
 }: Props & React.InputHTMLAttributes<any>) {
   return (
@@ -106,6 +131,7 @@ function RadioButton({
         outDefaultColorDesktop,
         outSelectedColorDesktop,
         bgColorDesktop,
+        negativeColor,
       }}
     >
       <input type="radio" {...rest} />
