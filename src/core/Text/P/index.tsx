@@ -60,6 +60,7 @@ interface ExtendedPProps {
     fontWeight?: number | string;
     fontFamily?: string;
   };
+  as?: string;
 }
 
 const ExtendedP = styled.p<ExtendedPProps>`
@@ -83,9 +84,10 @@ type Props = {
   style?: Object;
   fontWeight?: number | string;
   fontFamily?: string;
+  as?: string;
 };
 
-const P = (props: Props) => {
+const P = (props: Props & React.HTMLAttributes<HTMLElement>) => {
   const {
     children,
     color,
@@ -96,10 +98,13 @@ const P = (props: Props) => {
     textTransform = 'none',
     margin = '',
     halfMargin = '',
+    as,
+    ...rest
   } = props;
 
   return (
     <ExtendedP
+      as={as}
       options={{
         color,
         size,
@@ -110,6 +115,7 @@ const P = (props: Props) => {
         fontFamily,
       }}
       style={style}
+      {...rest}
     >
       {children}
     </ExtendedP>
