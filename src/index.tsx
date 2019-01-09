@@ -9,6 +9,7 @@ export { default as TextInput } from './core/Form/TextInput';
 export { default as UnderlineTextField } from './core/Form/UnderlineTextField';
 export { default as Dialog } from './core/Dialog';
 export { default as Slider } from './core/Slider';
+export { default as Select } from './core/Form/Select';
 export { default as DaySlider } from './core/Slider/DaySlider';
 export { default as H1 } from './core/Text/H1';
 export { default as H2 } from './core/Text/H2';
