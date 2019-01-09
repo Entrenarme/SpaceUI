@@ -62,9 +62,8 @@ const SelectOptions = styled.div`
       ? `${props.options.inputHeight + 5}px`
       : null};
   padding: 10px;
-  color: #000;
-  border: 1px solid #fff;
-  background-color: #fff;
+  color: #fff;
+  background-color: #4d4dce;
   border-radius: 3px;
   margin-top: 5px;
   width: 100%;
