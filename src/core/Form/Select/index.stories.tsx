@@ -33,6 +33,7 @@ storiesOf('Form/Select', module).add('Normal', () => (
       onChange={(selectedOption: Object) => console.log(selectedOption)}
       options={options}
       width={200}
+      height={50}
     />
   </div>
 ));
@@ -49,6 +50,7 @@ storiesOf('Form/Select', module).add('With custom styles', () => (
       onChange={() => console.log('jajaja')}
       options={options}
       width={200}
+      height={50}
     />
   </div>
 ));
@@ -66,7 +68,8 @@ storiesOf('Form/Select', module).add('With bottom anchor', () => (
       onChange={() => console.log('jajaja')}
       options={options}
       anchor="bottom"
-      width={200}
+      width={150}
+      height={35}
     />
   </div>
 ));
