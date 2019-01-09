@@ -4,6 +4,7 @@ interface Props {
   children: JSX.Element;
   outSideAction: Function;
   style?: Object;
+  className?: string;
 }
 
 class OutsideClick extends React.Component<Props> {
@@ -31,7 +32,11 @@ class OutsideClick extends React.Component<Props> {
     const { children } = this.props;
 
     return (
-      <div ref={this.wrapperRef} style={this.props.style}>
+      <div
+        ref={this.wrapperRef}
+        style={this.props.style}
+        className={this.props.className}
+      >
         {children}
       </div>
     );

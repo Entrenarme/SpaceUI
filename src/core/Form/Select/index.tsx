@@ -17,6 +17,7 @@ interface Props {
   anchor?: 'bottom' | 'top';
   // The width of the element
   width: number;
+  height: number;
 }
 
 interface State {
@@ -85,7 +86,7 @@ class Select extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    const element = document.querySelector('.select-input') as HTMLElement;
+    const element = document.querySelector('.outsideClick') as HTMLElement;
 
     this.setState({ inputHeight: element.offsetHeight });
 
@@ -127,7 +128,10 @@ class Select extends React.Component<Props, State> {
       <React.Fragment>
         <OutsideClick
           outSideAction={() => this.setState({ showOptions: false })}
-          style={{ width: `${this.props.width}px` }}
+          style={{
+            width: `${this.props.width}px`,
+          }}
+          className="outsideClick"
         >
           <SelectContainer
             className={`${this.props.className} select-container`}
@@ -139,6 +143,9 @@ class Select extends React.Component<Props, State> {
                   showOptions: !prevState.showOptions,
                 }))
               }
+              style={{
+                height: `${this.props.height}px`,
+              }}
             >
               {this.state.activeElement.text}
               <FontAwesomeIcon icon={faAngleDown} />
