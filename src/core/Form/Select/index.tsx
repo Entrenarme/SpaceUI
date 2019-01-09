@@ -106,9 +106,11 @@ class Select extends React.Component<Props, State> {
         <SimpleOption
           key={option.text}
           className="select-option"
-          onClick={() =>
-            this.setState({ activeElement: option, showOptions: false })
-          }
+          onClick={() => {
+            this.setState({ activeElement: option, showOptions: false });
+
+            this.props.onChange(option);
+          }}
         >
           {option.text}
         </SimpleOption>

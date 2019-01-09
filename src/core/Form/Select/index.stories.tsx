@@ -30,7 +30,7 @@ storiesOf('Form/Select', module).add('Normal', () => (
     }}
   >
     <Select
-      onChange={() => console.log('jajaja')}
+      onChange={(selectedOption: Object) => console.log(selectedOption)}
       options={options}
       width={200}
     />
