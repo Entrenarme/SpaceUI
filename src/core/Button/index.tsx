@@ -62,13 +62,9 @@ const StyledButton = styled.button<StyledButtonProps>`
   padding: ${props => (props.options.outLined ? '13px 20px' : '15px 20px')};
   border: 0;
   background: ${props => (props.options.outLined ? 'transparent' : null)};
-  background-image: ${props =>
+  background-color: ${props =>
     !props.options.outLined && !props.options.bgColor && !props.options.disabled
-      ? `linear-gradient(
-      270deg,
-      ${colors.buttonBackground.purpleGradient},
-      ${colors.buttonBackground.pinkGradient}
-    ); `
+      ? `#eb6b6c`
       : null};
   border: ${props => (props.options.outLined ? '2px solid' : null)};
   background-color: ${props =>
