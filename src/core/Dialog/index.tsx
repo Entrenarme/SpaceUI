@@ -6,14 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/pro-light-svg-icons';
 
 import { regularFont } from '../../helpers/fonts';
-import colors from '../../helpers/colors';
 
 import './styles/custom.css';
+interface HeaderProps {
+  color: string;
+}
 
-const HeaderStyles = styled.div`
-  background-color: ${colors.blue.modalHeader};
+const HeaderStyles = styled.div<HeaderProps>`
+  background-color: ${props => props.color ? props.color : '#18434D'};
   height: 55px;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +52,11 @@ interface Props {
   open: boolean;
   onClose: Function;
   header?: JSX.Element | Array<JSX.Element>;
-  style?: {};
+  style?: {
+    header?: {
+      color?: string;
+    }
+  };
 }
 
 class Dialog extends React.Component<Props> {
@@ -66,7 +72,7 @@ class Dialog extends React.Component<Props> {
         overlayClassName="Overlay"
         ariaHideApp={false}
       >
-        {header ? <HeaderStyles>{header}</HeaderStyles> : null}
+        {header ? <HeaderStyles color={style && style.header && style.header.color ?  style.header.color : ''}>{header}</HeaderStyles> : null}
         <MainContainer options={{ header }}>
           <IconContainer onClick={() => onClose()}>
             <FontAwesomeIcon
