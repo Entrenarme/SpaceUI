@@ -11,7 +11,6 @@ const ButtonsContainer = styled.div`
   display: flex;
   > button {
     border-radius: 0;
-    text-transform: uppercase;
 
     &:first-child {
       border-top-left-radius: 50px;
